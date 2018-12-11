@@ -1,0 +1,8 @@
+#!/bin/bash
+
+output=$( $( dirname $0 )/danetls "$@" )
+rc=$?
+
+echo -e "$output" | tail -n 1
+echo -e "$output" | head -n -1
+exit $rc
